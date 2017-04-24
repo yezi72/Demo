@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var timeId;
+        function cd() {
+            timeId=setInterval("bigger()",500);
+        }
+        function sd() {
+            clearInterval(timeId);
+        }
+        
+        function bigger() {
+            var node = document.getElementById("txt");
+            var size = parseInt(node.style.fontSize);
+            if(size){
+                size+= 10;
+            }else {
+                size = "14";
+            }
+            node.style.fontSize=size + "px";
+        }
+    </script>
+</head>
+<body>
+    <div id="txt">开始</div>
+    <div onclick="cd()" style="cursor: pointer">点击开始操作</div>
+    <div onclick="sd()" style="cursor: pointer">停止操作</div>
+</body>
+</html>

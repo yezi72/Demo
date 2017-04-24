@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //5秒后相应该方法，类似于响应式广告，弹出式广告一般不用
+        setTimeout("endWelcome()",5000);
+        function endWelcome() {
+            document.getElementById("welcome").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div id="welcome">欢迎来到我们的网站</div>
+    <a href="#" onclick="window.open('test01.html','aaa','width=300,height=300,resizable=0')">test01</a>
+    <a href="#" onclick="window.open('test02.html','aaa','width=400,height=400,resizable=0')">test02</a>
+    <br/>
+    <a href="#" onclick="window.open('bless.html','aaa','width=500,height=300')">输入你的祝福语</a>
+    <div id="bless"></div>
+</body>
+</html>

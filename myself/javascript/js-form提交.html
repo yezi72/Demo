@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+任务：利用JavaScript检查用户注册信息是否正确，在以下情况不满足时报错并阻止提交表单
+
+      用户名必须是3-10位英文字母或数字；
+
+      口令必须是6-20位；
+
+      两次输入口令必须一致。
+-->
+
+<form id="test-register" action="#" target="_blank" onsubmit="return checkRegisterForm()">
+    <p id="test-error" style="color:red"></p>
+    <p>
+        用户名: <input type="text" id="username" name="username">
+    </p>
+    <p>
+        口令: <input type="password" id="password" name="password">
+    </p>
+    <p>
+        重复口令: <input type="password" id="password-2">
+    </p>
+    <p>
+        <button type="submit">提交</button> <button type="reset">重置</button>
+    </p>
+</form>
+
+<script>
+    'use strict'; //严格模式
+    var checkRegisterForm = function () {
+        var username=document.getElementById('username');
+        var pwd=document.getElementById('password');
+        var pwd2=document.getElementById('password-2');//获取相应的三个节点
+        var reUsername=/^[0-9a-zA-Z]{3,10}$/;
+        var rePwd=/^[0-9a-zA-Z]{6,20}$/;//给定用户名和密码的格式
+        //测试用户输入是否符合格式
+        if(reUsername.test(username.value)===false){
+            alert('Username must consist of 3-10 letter or number!');
+            return false;
+        }else if(rePwd.test(pwd.value)===false){
+            alert('Password must consist of 6-20 letter or number!');
+            return false;
+        }else if(pwd2.value!==pwd.value){
+            alert('The twice password must be identical!');
+            return false;
+        }else {
+            alert('表单可以正确提交');
+            //return true;
+        }
+    }
+</script>
+</body>
+</html>

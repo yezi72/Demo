@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <article class="sample">
+        <header><h2>Guitar</h2></header>
+        <audio id="guitar" controls>
+            <source src="sources/sounds/xx.ogg" type="audio/ogg">
+            <source src="sources/sounds/yy.mp3" type="audio/mpeg">
+            <!--链接<a>在无法支持audio的浏览器中提供可下载的文件，可移到<audio>标签外-->
+            <a href="sources/sounds/yy.mp3">Download guitar.mp3</a>
+        </audio>
+    </article>
+    <article class="example">
+        <header><h2>Saturate With Blur</h2></header>
+        <video id="video_blur" preload="auto" controls width="640" height="480">
+            <source src="sources/video/aa.mp4" type="video/mp4">
+            <source src="sources/video/bb.ogv" type="video/ogg">
+            <source src="sources/video/cc.webm" type="video/webm">
+            <p>Your browser does not support the video tag.</p>
+        </video>
+    </article>
+</body>
+</html>
