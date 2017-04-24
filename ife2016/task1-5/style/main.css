@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: "Microsoft YaHei";
+    background: #dedede;
+    font-size: 14px;
+}
+.clearfix:before, .clearfix:after{
+    content: '';
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix{
+    *zoom:1;
+}
+
+/***********头部*************/
+header{
+    position: relative; /*子元素用绝对定位时，在父元素添加相对定位*/
+    height: 60px;
+    background: #333;
+    /*min-width: 960px;*/
+}
+header a img{
+    padding-left: 30px;
+    height: 58px;
+}
+/*实现页面响应式布局，在页面宽度小于700px时，header部分img图片不显示*/
+@media only screen and (max-width:600px) {
+    header a img{
+        display: none;
+    }
+}
+header ul{
+    position: absolute;
+    top:0;
+    right: 10px;
+}
+header ul li{
+    float: left;
+    text-align: center;
+    padding-right: 25px;
+}
+header ul li a{
+    /*display: block;*/
+    /*padding: 0 10px;*/
+    line-height: 58px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #fff;
+}
+header ul li a:hover{
+    color: #ff0;
+    /*border-bottom: 1px solid #ff0;*/
+    /*border-radius: 3px;*/
+}
+
+/**************主体*********************/
+article{
+    position: relative;
+    display: block;
+    margin: 20px 380px 20px 20px ;    /*设置article的位置，关键步骤*/
+    padding: 20px;
+    background: #fff;
+    box-shadow: 1px 2px 2px 1px #848484;/*css3添加阴影的属性*/
+    /*overflow: auto;*/
+}
+article h2{
+    padding: 10px 0;
+}
+article h3{
+    padding: 5px 0;
+    color:#808080;
+    font-size: 16px;
+}
+.auther , .aTime{
+    padding: 5px 5px 5px 0;
+    color:#808080;
+    font-size: 12px;
+}
+article p{
+    text-indent: 2em;/*首行缩进*/
+}
+article img{
+    width: 300px;
+    height: 180px;
+    padding: 10px 0;
+}
+article ul li{
+    list-style: none;
+    padding-left: 20px;
+}
+article dl dd{
+    float: left;
+    width: 120px;
+    margin: 20px 40px;
+    border: 1px solid #ccc;
+}
+article dl dd span{
+    display:block;
+    text-align: center;
+    font-size: 12px;
+    margin: 5px;
+}
+article dl dd img{
+    width: 110px;
+    height: 110px;
+    padding: 5px;
+}
+article ol{
+    margin: 10px 40px;
+}
+article table{
+    width: 100%;
+    border-collapse: collapse;/*设置表格的边框被合并为单一的边框*/
+}
+article table thead tr td{
+    color: #fff;
+    background: #333;
+}
+article table tr td{
+    font-size: 12px;
+    border: 1px solid #ccc;
+    height: 25px;
+}
+article table .bottomTable{
+    background: #ccc;
+}
+/*鼠标移到图片上方，出现小手指示*/
+img:hover{
+    cursor: pointer;
+}
+/*这样设置，是为了避免屏幕变小时，原图片尺寸影响美观*/
+@media only screen and (max-width: 500px){
+    .Image img{
+        width: 200px;
+        height: 120px;
+    }
+}
+/**********侧栏***************/
+aside{
+    position:fixed;top:60px;right:0px;  /*设置aside的位置,非常关键*/
+    margin:20px;
+    padding:20px;
+    background:white;
+    box-shadow:1px 1px 2px 1px #848484;
+    width:300px;
+}
+aside h4{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    border-left: 3px solid #ccc;
+}
+aside form div{
+    font-size: 12px;
+    margin: 15px 0;
+}
+aside form div .tips{
+    float: left;  /*添加后个人描述四字才得以和文本域上对齐*/
+    text-align: right;
+    width: 35%;
+    padding-right: 15px;
+}
+aside form div p{
+    margin-left: 35%;/*与上面的width对齐*/
+    padding-left: 15px;/*与上面的padding-right遥相辉映*/
+    font-size: 12px;
+    color: #aaa;
+}
+aside textarea{
+    width: 50%;
+    height: 100px;
+}
+aside .submitButton{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    background: #128fac;
+    color: #fff;
+    font-size: 17px;
+    border: none;
+}
+aside .submitButton:hover{
+    background: #0063dc;
+    color: #ff0;
+}
+/*
+ *当浏览器宽度小于800px时，侧栏回到默认的位置，并且和周围保持20px的距离，
+ *此时article的margin-right仍为380px,为了让整个页面显得美观，设置此时的margin-right为20px
+ */
+@media only screen and (max-width: 800px){
+    aside{
+        /*display: none;*/
+        position: static;
+        margin: 20px;
+        width: auto;
+    }
+    article{
+        margin-right: 20px;
+    }
+}
+
+/***********底部*************/
+footer{
+    width: 100%;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+
+}

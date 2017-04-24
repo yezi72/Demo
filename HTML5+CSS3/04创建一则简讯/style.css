@@ -1,0 +1,18 @@
+/*分割元素内容为两栏布局*/
+#newsletter{
+    /**
+     *column-count 使用多少栏来分割内容
+     *column-gap 指定相邻两栏之间间隔多少空格
+     *column-rule 在相邻两栏间添加边框
+     **/
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    -webkit-column-rule: 1px solid #ddccb5;
+        -moz-column-count: 2;
+        -moz-column-gap: 20px;
+        -moz-column-rule: 1px solid #ddccb5;
+            column-count: 2;
+            column-gap: 20px;
+            column-rule: 1px solid #ddccb5;
+
+}

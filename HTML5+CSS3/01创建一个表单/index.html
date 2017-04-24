@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <!--创建一个html5的表单-->
+<form method="post" action="#">
+        <fieldset id="personal-information">
+            <legend>Project Information </legend>
+            <ol>
+                <li>
+                    <label for="name">Name</label>
+                    <!--一个页面只能有一个autofocus属性-->
+                    <input type="text" name="name" autofocus id="name" placeholder="Please input your name">
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <!--用autocomplete来告知浏览器不要自动填充该字段的数据，用pattern属性指定正则表达式以验证数据,用title来显示提示信息-->
+                    <input type="password" name="password" id="password" value=""
+                           autocomplete="off" placeholder="Please input your password"
+                           pattern="^(?=.{8,})(?=.[a-z])(?=.[A-Z])(?=.*[\d])(?=.*[\w]).*$"
+                           title="Password must be 8 or more characters with at least one number,an uppercase letter ,and one special character"
+                    >
+                </li>
+                <li>
+                    <label for="password-confirmation">Password Confirmation</label>
+                    <input id="password-confirmation" type="password" name="password-confirmation"  value=""
+                           autocomplete="off" placeholder="Type your password again"
+                           pattern="^(?=.{8,})(?=.[a-z])(?=.[A-Z])(?=.*[\d])(?=.*[\w]).*$"
+                           title="Password confirmation must be 8 or more characters with at least one number,an uppercase letter ,and one special character"
+                    >
+                </li>
+                <li>
+                    <label for="priority">Priority</label>
+                    <input type="range" min="0" max="10" name="priority" value="0" id="priority">
+                </li>
+                <li>
+                    <label for="estimated-hours">Estimated Hours</label>
+                    <input type="number" name="estimated-hours" min="0" max="1000" id="estimated-hours">
+                </li>
+                <li>
+                    <label for="start-date">Start Date</label>
+                    <input type="date" name="start-date" id="start-date" value="2017-03-31">
+                </li>
+                <li>
+                    <label for="email">Email</label>
+                    <!--required验证是否输入合格，必填项是否填写-->
+                    <input type="email" name="email" id="email" required placeholder="user@example.com">
+                </li>
+                <li>
+                    <label for="url">Staging URL</label>
+                    <input type="url" name="url" id="url" placeholder="http://...">
+                </li>
+                <li>
+                    <label for="project-color">Project Color</label>
+                    <input type="color" name="project-color" id="project-color">
+                </li>
+                <li>
+                    <input type="submit" value="Submit">
+                </li>
+            </ol>
+        </fieldset>
+    </form>
+</body>
+</html>

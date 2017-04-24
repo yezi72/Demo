@@ -1,4 +1,0 @@
-/*获取要打印的页面的链接地址*/
-a:after{
-    content: "("attr(href)")";
-}

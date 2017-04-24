@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery的第一个测试</title>
+    <script type="text/javascript" src="../jquery-3.1.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var text = $("#one").val();
+                $("#two").val(text);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <button >点击复制</button>
+</body>
+</html>
